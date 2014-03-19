@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		5228195418D704A2003FAB4C /* CourseListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5228195318D704A2003FAB4C /* CourseListViewController.m */; };
 		5236F02018D43B0F00625EEE /* RecommendViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5236F01F18D43B0F00625EEE /* RecommendViewController.m */; };
 		5236F02318D4544300625EEE /* Pair.m in Sources */ = {isa = PBXBuildFile; fileRef = 5236F02218D4544300625EEE /* Pair.m */; };
 		523B742418D607D900F82947 /* book.png in Resources */ = {isa = PBXBuildFile; fileRef = 523B741918D607D900F82947 /* book.png */; };
@@ -38,14 +39,15 @@
 		527B7F2B18CF153A0027F4BE /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 527B7F0A18CF153A0027F4BE /* UIKit.framework */; };
 		527B7F3318CF153A0027F4BE /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 527B7F3118CF153A0027F4BE /* InfoPlist.strings */; };
 		527B7F3518CF153A0027F4BE /* demoTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 527B7F3418CF153A0027F4BE /* demoTests.m */; };
-		527ECAB718D34C2400801242 /* CourseListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 527ECAB618D34C2400801242 /* CourseListViewController.m */; };
 		527ECAC318D3670500801242 /* RTLabel.m in Sources */ = {isa = PBXBuildFile; fileRef = 527ECAC218D3670500801242 /* RTLabel.m */; };
 		527ECAC518D3679E00801242 /* CoreText.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 527ECAC418D3679E00801242 /* CoreText.framework */; };
 		527ECAC818D367EC00801242 /* ResultViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 527ECAC718D367EC00801242 /* ResultViewController.m */; };
+		529E0F4818D945D7001CCFE4 /* course.png in Resources */ = {isa = PBXBuildFile; fileRef = 529E0F4618D945D7001CCFE4 /* course.png */; };
+		529E0F4918D945D7001CCFE4 /* course@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 529E0F4718D945D7001CCFE4 /* course@2x.png */; };
+		529E0F5818D98129001CCFE4 /* CourseDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 529E0F5718D98129001CCFE4 /* CourseDetailViewController.m */; };
 		52B1DDB118D2B6A7001718B7 /* Question.m in Sources */ = {isa = PBXBuildFile; fileRef = 52B1DDB018D2B6A7001718B7 /* Question.m */; };
 		52B8A1FC18D14EA7009C836A /* ExamViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 52B8A1FB18D14EA7009C836A /* ExamViewController.m */; };
 		52C344BB18D0C603006FB727 /* Evaluation.m in Sources */ = {isa = PBXBuildFile; fileRef = 52C344BA18D0C603006FB727 /* Evaluation.m */; };
-		52C44C3618D56BDF00616BD1 /* DatePickerButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 52C44C3518D56BDF00616BD1 /* DatePickerButton.m */; };
 		52CB81A818D6D43200D5C220 /* MediaPlayer.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 52CB81A718D6D43200D5C220 /* MediaPlayer.framework */; };
 		52D830F718CF719500D233D8 /* ExamListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 52D830F618CF719500D233D8 /* ExamListViewController.m */; };
 /* End PBXBuildFile section */
@@ -61,6 +63,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		5228195218D704A2003FAB4C /* CourseListViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CourseListViewController.h; sourceTree = "<group>"; };
+		5228195318D704A2003FAB4C /* CourseListViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CourseListViewController.m; sourceTree = "<group>"; };
 		5236F01E18D43B0F00625EEE /* RecommendViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RecommendViewController.h; sourceTree = "<group>"; };
 		5236F01F18D43B0F00625EEE /* RecommendViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RecommendViewController.m; sourceTree = "<group>"; };
 		5236F02118D4544300625EEE /* Pair.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Pair.h; path = demo/Pair.h; sourceTree = "<group>"; };
@@ -102,21 +106,21 @@
 		527B7F3018CF153A0027F4BE /* demoTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "demoTests-Info.plist"; sourceTree = "<group>"; };
 		527B7F3218CF153A0027F4BE /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		527B7F3418CF153A0027F4BE /* demoTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = demoTests.m; sourceTree = "<group>"; };
-		527ECAB518D34C2400801242 /* CourseListViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CourseListViewController.h; sourceTree = "<group>"; };
-		527ECAB618D34C2400801242 /* CourseListViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CourseListViewController.m; sourceTree = "<group>"; };
 		527ECAC118D3670500801242 /* RTLabel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RTLabel.h; sourceTree = "<group>"; };
 		527ECAC218D3670500801242 /* RTLabel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RTLabel.m; sourceTree = "<group>"; };
 		527ECAC418D3679E00801242 /* CoreText.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreText.framework; path = System/Library/Frameworks/CoreText.framework; sourceTree = SDKROOT; };
 		527ECAC618D367EC00801242 /* ResultViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ResultViewController.h; sourceTree = "<group>"; };
 		527ECAC718D367EC00801242 /* ResultViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ResultViewController.m; sourceTree = "<group>"; };
+		529E0F4618D945D7001CCFE4 /* course.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = course.png; sourceTree = "<group>"; };
+		529E0F4718D945D7001CCFE4 /* course@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "course@2x.png"; sourceTree = "<group>"; };
+		529E0F5618D98129001CCFE4 /* CourseDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CourseDetailViewController.h; sourceTree = "<group>"; };
+		529E0F5718D98129001CCFE4 /* CourseDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CourseDetailViewController.m; sourceTree = "<group>"; };
 		52B1DDAF18D2B6A7001718B7 /* Question.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Question.h; path = demo/Question.h; sourceTree = "<group>"; };
 		52B1DDB018D2B6A7001718B7 /* Question.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Question.m; path = demo/Question.m; sourceTree = "<group>"; };
 		52B8A1FA18D14EA7009C836A /* ExamViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ExamViewController.h; sourceTree = "<group>"; };
 		52B8A1FB18D14EA7009C836A /* ExamViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ExamViewController.m; sourceTree = "<group>"; };
 		52C344B918D0C603006FB727 /* Evaluation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Evaluation.h; path = demo/Evaluation.h; sourceTree = "<group>"; };
 		52C344BA18D0C603006FB727 /* Evaluation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Evaluation.m; path = demo/Evaluation.m; sourceTree = "<group>"; };
-		52C44C3418D56BDF00616BD1 /* DatePickerButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DatePickerButton.h; sourceTree = "<group>"; };
-		52C44C3518D56BDF00616BD1 /* DatePickerButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DatePickerButton.m; sourceTree = "<group>"; };
 		52CB81A718D6D43200D5C220 /* MediaPlayer.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MediaPlayer.framework; path = System/Library/Frameworks/MediaPlayer.framework; sourceTree = SDKROOT; };
 		52D830F518CF719500D233D8 /* ExamListViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ExamListViewController.h; sourceTree = "<group>"; };
 		52D830F618CF719500D233D8 /* ExamListViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ExamListViewController.m; sourceTree = "<group>"; };
@@ -158,6 +162,8 @@
 				523B741D18D607D900F82947 /* check.png */,
 				523B741E18D607D900F82947 /* check@2x.png */,
 				523B741F18D607D900F82947 /* paper.png */,
+				529E0F4618D945D7001CCFE4 /* course.png */,
+				529E0F4718D945D7001CCFE4 /* course@2x.png */,
 				523B742018D607D900F82947 /* paper@2x.png */,
 				523B742118D607D900F82947 /* user.png */,
 				523B742218D607D900F82947 /* user@2x.png */,
@@ -207,14 +213,14 @@
 			children = (
 				527B7F1518CF153A0027F4BE /* AppDelegate.h */,
 				527B7F1618CF153A0027F4BE /* AppDelegate.m */,
-				527ECAB518D34C2400801242 /* CourseListViewController.h */,
-				527ECAB618D34C2400801242 /* CourseListViewController.m */,
+				529E0F5618D98129001CCFE4 /* CourseDetailViewController.h */,
+				529E0F5718D98129001CCFE4 /* CourseDetailViewController.m */,
+				5228195218D704A2003FAB4C /* CourseListViewController.h */,
+				5228195318D704A2003FAB4C /* CourseListViewController.m */,
 				523FFAA918D5E979009AE923 /* CoursePageViewController.h */,
 				523FFAAA18D5E979009AE923 /* CoursePageViewController.m */,
 				523B742F18D6083A00F82947 /* CourseViewController.h */,
 				523B743018D6083A00F82947 /* CourseViewController.m */,
-				52C44C3418D56BDF00616BD1 /* DatePickerButton.h */,
-				52C44C3518D56BDF00616BD1 /* DatePickerButton.m */,
 				52D830F518CF719500D233D8 /* ExamListViewController.h */,
 				52D830F618CF719500D233D8 /* ExamListViewController.m */,
 				52411DAC18D5A1BD00904A79 /* ExamPageViewController.h */,
@@ -223,8 +229,6 @@
 				52B8A1FB18D14EA7009C836A /* ExamViewController.m */,
 				527B7F2118CF153A0027F4BE /* Images.xcassets */,
 				527B7F1818CF153A0027F4BE /* Main.storyboard */,
-				523B743718D612FB00F82947 /* TabViewController.h */,
-				523B743818D612FB00F82947 /* TabViewController.m */,
 				5236F01E18D43B0F00625EEE /* RecommendViewController.h */,
 				5236F01F18D43B0F00625EEE /* RecommendViewController.m */,
 				527ECAC618D367EC00801242 /* ResultViewController.h */,
@@ -232,6 +236,8 @@
 				527ECAC118D3670500801242 /* RTLabel.h */,
 				527ECAC218D3670500801242 /* RTLabel.m */,
 				527B7F0D18CF153A0027F4BE /* Supporting Files */,
+				523B743718D612FB00F82947 /* TabViewController.h */,
+				523B743818D612FB00F82947 /* TabViewController.m */,
 			);
 			path = demo;
 			sourceTree = "<group>";
@@ -375,6 +381,8 @@
 				523B742A18D607D900F82947 /* paper.png in Resources */,
 				527B7F1A18CF153A0027F4BE /* Main.storyboard in Resources */,
 				523B742518D607D900F82947 /* book@2x.png in Resources */,
+				529E0F4918D945D7001CCFE4 /* course@2x.png in Resources */,
+				529E0F4818D945D7001CCFE4 /* course.png in Resources */,
 				523B742618D607D900F82947 /* chat.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -401,13 +409,13 @@
 				52411DAE18D5A1BD00904A79 /* ExamPageViewController.m in Sources */,
 				527ECAC318D3670500801242 /* RTLabel.m in Sources */,
 				52D830F718CF719500D233D8 /* ExamListViewController.m in Sources */,
-				52C44C3618D56BDF00616BD1 /* DatePickerButton.m in Sources */,
+				5228195418D704A2003FAB4C /* CourseListViewController.m in Sources */,
 				52B1DDB118D2B6A7001718B7 /* Question.m in Sources */,
 				527B7F1318CF153A0027F4BE /* main.m in Sources */,
+				529E0F5818D98129001CCFE4 /* CourseDetailViewController.m in Sources */,
 				523B743118D6083A00F82947 /* CourseViewController.m in Sources */,
 				5236F02318D4544300625EEE /* Pair.m in Sources */,
 				523FFAAB18D5E979009AE923 /* CoursePageViewController.m in Sources */,
-				527ECAB718D34C2400801242 /* CourseListViewController.m in Sources */,
 				52C344BB18D0C603006FB727 /* Evaluation.m in Sources */,
 				527ECAC818D367EC00801242 /* ResultViewController.m in Sources */,
 			);

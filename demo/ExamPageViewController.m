@@ -11,15 +11,15 @@
 @interface ExamPageViewController ()<UIPageViewControllerDataSource, UIPageViewControllerDelegate>
 @property NSArray* controllers;
 @property (nonatomic, strong) UIPageViewController* pageViewController;
-@property (nonatomic, strong) UIPageControl * pageControl;
-@property NSInteger orientation;
+@property (weak, nonatomic) IBOutlet UIPageControl *pageControl;
 @property (weak, nonatomic) IBOutlet UIBarButtonItem *submitButton;
+@property NSInteger currentIndex;
 @end
 
 @implementation ExamPageViewController;
 @synthesize pageViewController;
 @synthesize pageControl;
-@synthesize orientation;
+@synthesize currentIndex;
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -48,9 +48,7 @@
     range.length = 1;
     range.location = 0;
     
-    [self.pageViewController setViewControllers:[self.controllers subarrayWithRange:range] direction:UIPageViewControllerNavigationDirectionForward animated:NO completion:^(BOOL finished) {
-        
-    }];
+    [self.pageViewController setViewControllers:[self.controllers subarrayWithRange:range] direction:UIPageViewControllerNavigationDirectionForward animated:NO completion:nil];
     [self.view addSubview:self.pageViewController.view];
     [self addChildViewController:self.pageViewController];
     
@@ -58,11 +56,7 @@
     [self.pageViewController didMoveToParentViewController:self];
     self.view.gestureRecognizers = self.pageViewController.gestureRecognizers;
     
-    self.pageControl = [[UIPageControl alloc] init];
-#define PAGECONTROL_HEIGHT 32
-    CGRect pageViewRect = self.view.bounds;
-    self.pageViewController.view.frame = pageViewRect;
-    self.pageControl.frame = CGRectMake(0, pageViewRect.origin.y + pageViewRect.size.height - PAGECONTROL_HEIGHT, pageViewRect.size.width, PAGECONTROL_HEIGHT);
+    self.pageViewController.view.frame = self.view.bounds;
     UIColor* currentTintColor = [self.view tintColor];
     UIColor* tintColor = [currentTintColor colorWithAlphaComponent:0.3];
     pageControl.pageIndicatorTintColor = tintColor ;
@@ -71,16 +65,11 @@
     pageControl.numberOfPages = self.controllers.count;
     pageControl.currentPage = 0;
     pageControl.hidesForSinglePage = YES;
-    [self handlePageChange: 0 viewController:self.controllers[0]];
+    [pageControl addTarget:self action:@selector(handlePageControl:) forControlEvents:UIControlEventValueChanged];
+    UIViewController* viewController = self.controllers[0];
+    [self handlePageChange: 0 withTitle: viewController.title];
     [self.pageViewController.view addSubview:pageControl];
     
-    self.view.contentMode = UIViewContentModeRedraw;
-    self.orientation = 0;
-}
-
-- (void) viewDidAppear:(BOOL)animated
-{
-    [self handleRotation];
 }
 
 - (void)didReceiveMemoryWarning
@@ -89,20 +78,27 @@
     // Dispose of any resources that can be recreated.
 }
 
+-(void) handlePageControl:(UIPageControl*)sender
+{
+    UIViewController* viewController = self.controllers[sender.currentPage];
+    [self.pageViewController setViewControllers:@[viewController] direction:(sender.currentPage > self.currentIndex? UIPageViewControllerNavigationDirectionForward: UIPageViewControllerNavigationDirectionReverse) animated:YES completion:nil];
+    [self handlePageChange:sender.currentPage withTitle: viewController.title];
+}
+
 - (UIViewController *)pageViewController:(UIPageViewController *)pageViewController viewControllerBeforeViewController:(UIViewController *)viewController
 {
-    NSInteger currentIndex = [self.controllers indexOfObject:viewController];
-    if(currentIndex > 0 ){
-        currentIndex --;
-        UIViewController* newViewController = [self.controllers objectAtIndex: currentIndex];
-        self.pageControl.currentPage = currentIndex;
+    NSInteger index = [self.controllers indexOfObject:viewController];
+    if(index > 0 ){
+        index --;
+        UIViewController* newViewController = [self.controllers objectAtIndex: index];
+        self.pageControl.currentPage = index;
         return newViewController;
     } else {
         return nil;
     }
 }
 
-- (void)handlePageChange:(NSInteger) pageIndex viewController: (UIViewController*)viewController
+- (void)handlePageChange:(NSInteger) pageIndex withTitle: (NSString*)title
 {
     UIBarButtonItem* btn = self.submitButton;
     if(pageIndex == 1){
@@ -114,17 +110,17 @@
         btn.enabled = false;
         btn.title = nil;
     }
-    self.navigationItem.title = viewController.title;
+    self.navigationItem.title = title;
     self.pageControl.currentPage = pageIndex;
 }
 
 - (UIViewController *)pageViewController:(UIPageViewController *)pageViewController viewControllerAfterViewController:(UIViewController *)viewController
 {
-    NSInteger currentIndex = [self.controllers indexOfObject:viewController];
-    if(currentIndex < self.controllers.count - 1){
-        currentIndex ++;
-        UIViewController* newViewController = [self.controllers objectAtIndex: currentIndex];
-        self.pageControl.currentPage = currentIndex;
+    NSInteger index = [self.controllers indexOfObject:viewController];
+    if(index < self.controllers.count - 1){
+        index ++;
+        UIViewController* newViewController = [self.controllers objectAtIndex: index];
+        self.pageControl.currentPage = index;
         return newViewController;
     } else {
         return nil;
@@ -134,22 +130,7 @@
 -(void)pageViewController:(UIPageViewController *)viewController didFinishAnimating:(BOOL)finished previousViewControllers:(NSArray *)previousViewControllers transitionCompleted:(BOOL)completed
 {
     UIViewController* currentViewController = viewController.viewControllers[0];
-    NSInteger currentIndex = [self.controllers indexOfObject: currentViewController];
-    [self handlePageChange:currentIndex viewController:currentViewController];
-}
-
--(void)handleRotation
-{
-    if(self.orientation == 0 || UIInterfaceOrientationIsPortrait(self.orientation) != UIInterfaceOrientationIsPortrait(self.interfaceOrientation))
-    {
-        CGRect pageViewRect = self.view.bounds;
-        self.pageControl.frame = CGRectMake(0, pageViewRect.origin.y + pageViewRect.size.height - PAGECONTROL_HEIGHT, pageViewRect.size.width, PAGECONTROL_HEIGHT);
-    }
-    self.orientation = self.interfaceOrientation;
-}
-
--(void)didRotateFromInterfaceOrientation:(UIInterfaceOrientation)fromInterfaceOrientation
-{
-    [self handleRotation];
+    self.currentIndex = [self.controllers indexOfObject: currentViewController];
+    [self handlePageChange:currentIndex withTitle:currentViewController.title];
 }
 @end

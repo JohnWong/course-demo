@@ -53,7 +53,7 @@
     self.orientation = 0;
 }
 
--(void)handleRotation
+-(void)handleOrientation
 {
     if(self.orientation == 0 || UIInterfaceOrientationIsPortrait(self.orientation) != UIInterfaceOrientationIsPortrait(self.interfaceOrientation))
     {
@@ -156,7 +156,7 @@
 
 -(void) didRotateFromInterfaceOrientation:(UIInterfaceOrientation)fromInterfaceOrientation
 {
-    [self handleRotation];
+    [self handleOrientation];
 }
 
 @end

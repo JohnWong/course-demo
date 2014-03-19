@@ -9,11 +9,11 @@
 #import "CoursePageViewController.h"
 
 @interface CoursePageViewController ()<UIPageViewControllerDataSource, UIPageViewControllerDelegate>
-@property (weak, nonatomic) IBOutlet UITextField *textField;
 
 @property NSArray* controllers;
 @property (nonatomic, strong) UIPageViewController* pageViewController;
-@property (nonatomic, strong) UIPageControl * pageControl;
+@property (strong, nonatomic) UIPageControl *pageControl;
+@property NSInteger currentIndex;
 
 @end
 
@@ -21,12 +21,13 @@
 
 @synthesize pageViewController;
 @synthesize pageControl;
+@synthesize currentIndex;
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
     if (self) {
-        // Custom initialization
+        
     }
     return self;
 }
@@ -34,6 +35,8 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    
+	// Do any additional setup after loading the view.
     self.pageViewController = [[UIPageViewController alloc]
                                initWithTransitionStyle:UIPageViewControllerTransitionStyleScroll
                                navigationOrientation:UIPageViewControllerNavigationOrientationHorizontal
@@ -42,40 +45,36 @@
     
     self.pageViewController.dataSource = self;
     self.pageViewController.delegate = self;
-    self.controllers = @[[self.storyboard instantiateViewControllerWithIdentifier:@"CourseList"]];
+    self.controllers = @[[self.storyboard instantiateViewControllerWithIdentifier:@"CourseList"], [self.storyboard instantiateViewControllerWithIdentifier:@"CourseDownload"]];
     NSRange range;
     range.length = 1;
     range.location = 0;
     
-    [self.pageViewController setViewControllers:[self.controllers subarrayWithRange:range] direction:UIPageViewControllerNavigationDirectionForward animated:NO completion:^(BOOL finished) {
-        
-    }];
+    [self.pageViewController setViewControllers:[self.controllers subarrayWithRange:range] direction:UIPageViewControllerNavigationDirectionForward animated:NO completion:nil];
     [self.view addSubview:self.pageViewController.view];
     [self addChildViewController:self.pageViewController];
     
-    CGRect pageViewRect = self.view.bounds;
-    self.pageViewController.view.frame = pageViewRect;
     
     [self.pageViewController didMoveToParentViewController:self];
-    UIViewController* currentViewController = self.controllers[0];
-    self.navigationItem.title = currentViewController.title;
     self.view.gestureRecognizers = self.pageViewController.gestureRecognizers;
     
-#define PAGECONTROL_HEIGHT 28
-    self.pageControl = [[UIPageControl alloc] initWithFrame:CGRectMake(0, pageViewRect.origin.y + pageViewRect.size.height - PAGECONTROL_HEIGHT, pageViewRect.size.width, PAGECONTROL_HEIGHT)];
+    self.pageViewController.view.frame = self.view.bounds;
     UIColor* currentTintColor = [self.view tintColor];
     UIColor* tintColor = [currentTintColor colorWithAlphaComponent:0.3];
+    pageControl = [[UIPageControl alloc] initWithFrame:CGRectMake(140, 418, 39, 37)];
     pageControl.pageIndicatorTintColor = tintColor ;
     pageControl.currentPageIndicatorTintColor = currentTintColor ;
-    pageControl.backgroundColor = [ UIColor clearColor ] ;
     pageControl.numberOfPages = self.controllers.count;
     pageControl.currentPage = 0;
     pageControl.hidesForSinglePage = YES;
-    [self.pageViewController.view addSubview:pageControl];
-}
-
--(void)submit
-{
+    [pageControl addTarget:self action:@selector(handlePageControl:) forControlEvents:UIControlEventValueChanged];
+    pageControl.translatesAutoresizingMaskIntoConstraints = NO;
+    [self.view addSubview:pageControl];
+    [self.view addConstraint:[NSLayoutConstraint constraintWithItem:pageControl attribute:NSLayoutAttributeBottom relatedBy:NSLayoutRelationEqual toItem:self.view attribute:NSLayoutAttributeBottom multiplier:1.0 constant:0]];
+    [self.view addConstraint:[NSLayoutConstraint constraintWithItem:pageControl attribute:NSLayoutAttributeCenterX relatedBy:NSLayoutRelationEqual toItem:self.view attribute:NSLayoutAttributeCenterX multiplier:1.0 constant:0]];
+    
+    UIViewController* viewController = self.controllers[0];
+    [self handlePageChange: 0 withTitle: viewController.title];
     
 }
 
@@ -85,37 +84,49 @@
     // Dispose of any resources that can be recreated.
 }
 
+-(void) handlePageControl:(UIPageControl*)sender
+{
+    UIViewController* viewController = self.controllers[sender.currentPage];
+    [self.pageViewController setViewControllers:@[viewController] direction:(sender.currentPage > self.currentIndex? UIPageViewControllerNavigationDirectionForward: UIPageViewControllerNavigationDirectionReverse) animated:YES completion:nil];
+    [self handlePageChange:sender.currentPage withTitle: viewController.title];
+}
+
 - (UIViewController *)pageViewController:(UIPageViewController *)pageViewController viewControllerBeforeViewController:(UIViewController *)viewController
 {
-    NSInteger currentIndex = [self.controllers indexOfObject:viewController];
-    if(currentIndex > 0 ){
-        currentIndex --;
-        UIViewController* newViewController = [self.controllers objectAtIndex: currentIndex];
-        self.navigationItem.title = newViewController.title;
-        self.pageControl.currentPage = currentIndex;
+    NSInteger index = [self.controllers indexOfObject:viewController];
+    if(index > 0 ){
+        index --;
+        UIViewController* newViewController = [self.controllers objectAtIndex: index];
+        self.pageControl.currentPage = index;
         return newViewController;
     } else {
         return nil;
     }
+}
+
+- (void)handlePageChange:(NSInteger) pageIndex withTitle: (NSString*)title
+{
+    self.navigationItem.title = title;
+    self.pageControl.currentPage = pageIndex;
 }
 
 - (UIViewController *)pageViewController:(UIPageViewController *)pageViewController viewControllerAfterViewController:(UIViewController *)viewController
 {
-    NSInteger currentIndex = [self.controllers indexOfObject:viewController];
-    if(currentIndex < self.controllers.count - 1){
-        currentIndex ++;
-        UIViewController* newViewController = [self.controllers objectAtIndex: currentIndex];
-        self.navigationItem.title = newViewController.title;
-        self.pageControl.currentPage = currentIndex;
+    NSInteger index = [self.controllers indexOfObject:viewController];
+    if(index < self.controllers.count - 1){
+        index ++;
+        UIViewController* newViewController = [self.controllers objectAtIndex: index];
+        self.pageControl.currentPage = index;
         return newViewController;
     } else {
         return nil;
     }
 }
 
--(void)pageViewController:(UIPageViewController *)pageViewController willTransitionToViewControllers:(NSArray *)pendingViewControllers
+-(void)pageViewController:(UIPageViewController *)viewController didFinishAnimating:(BOOL)finished previousViewControllers:(NSArray *)previousViewControllers transitionCompleted:(BOOL)completed
 {
-    NSInteger currentIndex = [self.controllers indexOfObject: pendingViewControllers[0]];
-    self.pageControl.currentPage = currentIndex;
+    UIViewController* currentViewController = viewController.viewControllers[0];
+    self.currentIndex = [self.controllers indexOfObject: currentViewController];
+    [self handlePageChange:currentIndex withTitle:currentViewController.title];
 }
 @end

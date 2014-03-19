@@ -10,16 +10,12 @@
 #import <MediaPlayer/MediaPlayer.h>
 
 @interface CourseViewController ()
-@property NSInteger orientation;
-@property UIImageView* coverImageView;
 @property(nonatomic, strong) MPMoviePlayerController* moviePlayer;
 
 @end
 
 @implementation CourseViewController
 
-@synthesize orientation;
-@synthesize coverImageView;
 @synthesize moviePlayer;
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
@@ -35,16 +31,18 @@
 {
     [super viewDidLoad];
 	// Do any additional setup after loading the view.
-    coverImageView=[[UIImageView alloc]init];
-    coverImageView.image = [UIImage imageNamed:@"videoviewdemo.png"];
-    [self.view addSubview:coverImageView];
-    self.orientation = 0;
-    
     NSURL *url = [NSURL fileURLWithPath: [[NSBundle mainBundle] pathForResource:@"videoviewdemo" ofType:@"mp4"]];
     moviePlayer = [[MPMoviePlayerController alloc] initWithContentURL:url];
-    [self.view addSubview:moviePlayer.view];
-//    moviePlayer set
-    [moviePlayer play];
+    moviePlayer.controlStyle = MPMovieControlStyleFullscreen;
+    [moviePlayer.view setFrame:self.tabBarController.view.bounds];
+    [self.tabBarController.view addSubview:moviePlayer.view];
+    moviePlayer.view.backgroundColor = [UIColor whiteColor];
+    moviePlayer.shouldAutoplay=YES;
+
+    moviePlayer.controlStyle=MPMovieControlStyleFullscreen;
+     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(MPMoviePlayerDidExitFullscreen:) name:MPMoviePlayerDidExitFullscreenNotification object:nil];
+    
+    [moviePlayer prepareToPlay];
 }
 
 - (void)didReceiveMemoryWarning
@@ -56,40 +54,22 @@
 -(void) viewWillAppear:(BOOL)animated
 {
     [super viewWillAppear:animated];
-    [self handleRotation];
+//    [self handleOrientation];
 }
 
--(void) handleRotation
-{
-    NSLog(@"%d %d", self.orientation, self.interfaceOrientation);
-    if(self.orientation == 0 || UIInterfaceOrientationIsPortrait(self.orientation) != UIInterfaceOrientationIsPortrait(self.interfaceOrientation))
-    {
-        CGSize imageSize = self.coverImageView.image.size;
-        CGRect frame = self.view.bounds;
-        CGSize viewSize;
-        if(imageSize.width/imageSize.height >= frame.size.width/frame.size.height)
-        {
-            viewSize.width = frame.size.width;
-            viewSize.height = viewSize.width * imageSize.height / imageSize.width;
-        } else {
-            viewSize.height = frame.size.height;
-            viewSize.width = viewSize.height * imageSize.width / imageSize.height;
-        }
-        CGRect playerRect = CGRectMake(frame.origin.x + (frame.size.width - viewSize.width) / 2 , frame.origin.y + (frame.size.height - viewSize.height) / 2, viewSize.width, viewSize.height);
-        coverImageView.frame = playerRect;
-        self.moviePlayer.view.frame = playerRect;
-        NSLog(@"%@", NSStringFromCGRect(coverImageView.frame));
-    }
-    self.orientation = self.interfaceOrientation;
-}
 
 -(void)didRotateFromInterfaceOrientation:(UIInterfaceOrientation)fromInterfaceOrientation
 {
-    [self handleRotation];
+    self.moviePlayer.view.frame = self.tabBarController.view.bounds;
 }
 
--(void)viewWillDisappear:(BOOL)animated
+- (void)MPMoviePlayerDidExitFullscreen:(NSNotification *)notification
 {
+    [[NSNotificationCenter defaultCenter] removeObserver:self
+                                                    name:MPMoviePlayerDidExitFullscreenNotification
+                                                  object:nil];
+    
     [self.moviePlayer stop];
+    [self.moviePlayer.view removeFromSuperview];
 }
 @end
