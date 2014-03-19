@@ -40,12 +40,18 @@
     self.title = data.name;
     //    self.scrollView.contentSize = CGSizeMake(self.scrollView.frame.size.width, self.scrollView.frame.size.height * 3);
     self.questions = [[NSMutableArray alloc]init];
-    [self.questions addObject:[[Question alloc] initWithTrueOrFalse:@"1.判断题判断题判断题判断题判断题判断题判断题判断题判断题判断题判断题判断题判断题判断题判断题判断题" withAnswer:1]];
-    for(int i=2; i<=10; i++){
+    [self.questions addObject:[[Question alloc] initWithTrueOrFalse:@"1.当我投入到创造性的工作时，经常会忘却一切。" withAnswer:1]];
+    [self.questions addObject:[[Question alloc] initWithTrueOrFalse:@"2. 我喜欢观察各种动植物的生长和发育过程。" withAnswer:1]];
+    [self.questions addObject:[[Question alloc] initWithTrueOrFalse:@"3. 我喜欢读悬疑小说中的精彩曲折的推理过程。" withAnswer:1]];
+    [self.questions addObject:[[Question alloc] initWithTrueOrFalse:@"4. 和他人共事的时候，相比于事情本身，我更关注他们的切身感受。" withAnswer:1]];
+    [self.questions addObject:[[Question alloc] initWithOptions:@"5. 我通常都会记录下我的收入和支出，并把收据整理好保存下来。" withAnswer:1 withOptionA:@"A. 非常符合" withOptionB:@"较符合" withOptionC:@"不符合" withOptionD:@"很不符合"]];
+    [self.questions addObject:[[Question alloc] initWithOptions:@"6. 对于目标要求清楚的工作，我总是能做的很好。" withAnswer:1 withOptionA:@"A. 非常符合" withOptionB:@"较符合" withOptionC:@"不符合" withOptionD:@"很不符合"]];
+    
+    for(int i=self.questions.count; i<=12; i++){
         if(i < 6){
             [self.questions addObject:[[Question alloc] initWithTrueOrFalse:[NSString stringWithFormat:@"%d. 判断题", i] withAnswer:1]];
         } else {
-            [self.questions addObject:[[Question alloc] initWithOptions:[NSString stringWithFormat:@"%d. 选择题", i] withAnswer:1 withOptionA:@"Option A" withOptionB:@"Option B" withOptionC:@"Option C" withOptionD:@"Option D"]];
+            [self.questions addObject:[[Question alloc] initWithOptions:[NSString stringWithFormat:@"%d. 选择题", i] withAnswer:1 withOptionA:@"A. 非常符合" withOptionB:@"较符合" withOptionC:@"不符合" withOptionD:@"很不符合"]];
         }
     }
     [self.tableView setDelegate:self];

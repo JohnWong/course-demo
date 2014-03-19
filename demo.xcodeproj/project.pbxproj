@@ -26,6 +26,13 @@
 		523B743918D612FB00F82947 /* TabViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 523B743818D612FB00F82947 /* TabViewController.m */; };
 		523FFAAB18D5E979009AE923 /* CoursePageViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 523FFAAA18D5E979009AE923 /* CoursePageViewController.m */; };
 		52411DAE18D5A1BD00904A79 /* ExamPageViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 52411DAD18D5A1BD00904A79 /* ExamPageViewController.m */; };
+		52613D8518D9DF90001EFED5 /* wallpaper@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 52613D8418D9DF90001EFED5 /* wallpaper@2x.png */; };
+		52613D8A18D9E1A4001EFED5 /* blue@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 52613D8618D9E1A4001EFED5 /* blue@2x.png */; };
+		52613D8B18D9E1A4001EFED5 /* green@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 52613D8718D9E1A4001EFED5 /* green@2x.png */; };
+		52613D8C18D9E1A4001EFED5 /* pink@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 52613D8818D9E1A4001EFED5 /* pink@2x.png */; };
+		52613D8D18D9E1A4001EFED5 /* yellow@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 52613D8918D9E1A4001EFED5 /* yellow@2x.png */; };
+		52613D8F18D9E6DA001EFED5 /* link.png in Resources */ = {isa = PBXBuildFile; fileRef = 52613D8E18D9E6DA001EFED5 /* link.png */; };
+		52613D9118D9EC9E001EFED5 /* small.png in Resources */ = {isa = PBXBuildFile; fileRef = 52613D9018D9EC9E001EFED5 /* small.png */; };
 		527B7F0718CF153A0027F4BE /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 527B7F0618CF153A0027F4BE /* Foundation.framework */; };
 		527B7F0918CF153A0027F4BE /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 527B7F0818CF153A0027F4BE /* CoreGraphics.framework */; };
 		527B7F0B18CF153A0027F4BE /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 527B7F0A18CF153A0027F4BE /* UIKit.framework */; };
@@ -45,6 +52,8 @@
 		529E0F4818D945D7001CCFE4 /* course.png in Resources */ = {isa = PBXBuildFile; fileRef = 529E0F4618D945D7001CCFE4 /* course.png */; };
 		529E0F4918D945D7001CCFE4 /* course@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 529E0F4718D945D7001CCFE4 /* course@2x.png */; };
 		529E0F5818D98129001CCFE4 /* CourseDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 529E0F5718D98129001CCFE4 /* CourseDetailViewController.m */; };
+		529E0F5E18D9C873001CCFE4 /* github.png in Resources */ = {isa = PBXBuildFile; fileRef = 529E0F5C18D9C873001CCFE4 /* github.png */; };
+		529E0F5F18D9C873001CCFE4 /* github@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 529E0F5D18D9C873001CCFE4 /* github@2x.png */; };
 		52B1DDB118D2B6A7001718B7 /* Question.m in Sources */ = {isa = PBXBuildFile; fileRef = 52B1DDB018D2B6A7001718B7 /* Question.m */; };
 		52B8A1FC18D14EA7009C836A /* ExamViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 52B8A1FB18D14EA7009C836A /* ExamViewController.m */; };
 		52C344BB18D0C603006FB727 /* Evaluation.m in Sources */ = {isa = PBXBuildFile; fileRef = 52C344BA18D0C603006FB727 /* Evaluation.m */; };
@@ -89,6 +98,13 @@
 		523FFAAA18D5E979009AE923 /* CoursePageViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CoursePageViewController.m; sourceTree = "<group>"; };
 		52411DAC18D5A1BD00904A79 /* ExamPageViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ExamPageViewController.h; sourceTree = "<group>"; };
 		52411DAD18D5A1BD00904A79 /* ExamPageViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ExamPageViewController.m; sourceTree = "<group>"; };
+		52613D8418D9DF90001EFED5 /* wallpaper@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "wallpaper@2x.png"; sourceTree = "<group>"; };
+		52613D8618D9E1A4001EFED5 /* blue@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "blue@2x.png"; sourceTree = "<group>"; };
+		52613D8718D9E1A4001EFED5 /* green@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "green@2x.png"; sourceTree = "<group>"; };
+		52613D8818D9E1A4001EFED5 /* pink@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "pink@2x.png"; sourceTree = "<group>"; };
+		52613D8918D9E1A4001EFED5 /* yellow@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "yellow@2x.png"; sourceTree = "<group>"; };
+		52613D8E18D9E6DA001EFED5 /* link.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = link.png; sourceTree = "<group>"; };
+		52613D9018D9EC9E001EFED5 /* small.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = small.png; sourceTree = "<group>"; };
 		527B7F0318CF153A0027F4BE /* demo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = demo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		527B7F0618CF153A0027F4BE /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		527B7F0818CF153A0027F4BE /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -115,6 +131,8 @@
 		529E0F4718D945D7001CCFE4 /* course@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "course@2x.png"; sourceTree = "<group>"; };
 		529E0F5618D98129001CCFE4 /* CourseDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CourseDetailViewController.h; sourceTree = "<group>"; };
 		529E0F5718D98129001CCFE4 /* CourseDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CourseDetailViewController.m; sourceTree = "<group>"; };
+		529E0F5C18D9C873001CCFE4 /* github.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = github.png; sourceTree = "<group>"; };
+		529E0F5D18D9C873001CCFE4 /* github@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "github@2x.png"; sourceTree = "<group>"; };
 		52B1DDAF18D2B6A7001718B7 /* Question.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Question.h; path = demo/Question.h; sourceTree = "<group>"; };
 		52B1DDB018D2B6A7001718B7 /* Question.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Question.m; path = demo/Question.m; sourceTree = "<group>"; };
 		52B8A1FA18D14EA7009C836A /* ExamViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ExamViewController.h; sourceTree = "<group>"; };
@@ -163,11 +181,20 @@
 				523B741E18D607D900F82947 /* check@2x.png */,
 				523B741F18D607D900F82947 /* paper.png */,
 				529E0F4618D945D7001CCFE4 /* course.png */,
+				529E0F5C18D9C873001CCFE4 /* github.png */,
+				529E0F5D18D9C873001CCFE4 /* github@2x.png */,
 				529E0F4718D945D7001CCFE4 /* course@2x.png */,
 				523B742018D607D900F82947 /* paper@2x.png */,
 				523B742118D607D900F82947 /* user.png */,
 				523B742218D607D900F82947 /* user@2x.png */,
+				52613D8418D9DF90001EFED5 /* wallpaper@2x.png */,
+				52613D9018D9EC9E001EFED5 /* small.png */,
+				52613D8618D9E1A4001EFED5 /* blue@2x.png */,
+				52613D8718D9E1A4001EFED5 /* green@2x.png */,
+				52613D8818D9E1A4001EFED5 /* pink@2x.png */,
+				52613D8918D9E1A4001EFED5 /* yellow@2x.png */,
 				523B743218D6096B00F82947 /* videoviewdemo.png */,
+				52613D8E18D9E6DA001EFED5 /* link.png */,
 				523B742318D607D900F82947 /* videoviewdemo.mp4 */,
 			);
 			path = resources;
@@ -367,21 +394,30 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				52613D8A18D9E1A4001EFED5 /* blue@2x.png in Resources */,
+				52613D8F18D9E6DA001EFED5 /* link.png in Resources */,
+				52613D8C18D9E1A4001EFED5 /* pink@2x.png in Resources */,
 				523B742718D607D900F82947 /* chat@2x.png in Resources */,
 				527B7F2218CF153A0027F4BE /* Images.xcassets in Resources */,
 				523B742C18D607D900F82947 /* user.png in Resources */,
+				529E0F5F18D9C873001CCFE4 /* github@2x.png in Resources */,
 				523B742B18D607D900F82947 /* paper@2x.png in Resources */,
 				523B742918D607D900F82947 /* check@2x.png in Resources */,
 				523B742818D607D900F82947 /* check.png in Resources */,
+				529E0F5E18D9C873001CCFE4 /* github.png in Resources */,
 				527B7F1118CF153A0027F4BE /* InfoPlist.strings in Resources */,
 				523B742418D607D900F82947 /* book.png in Resources */,
 				523B742D18D607D900F82947 /* user@2x.png in Resources */,
+				52613D8B18D9E1A4001EFED5 /* green@2x.png in Resources */,
+				52613D8D18D9E1A4001EFED5 /* yellow@2x.png in Resources */,
 				523B742E18D607D900F82947 /* videoviewdemo.mp4 in Resources */,
 				523B743318D6096B00F82947 /* videoviewdemo.png in Resources */,
 				523B742A18D607D900F82947 /* paper.png in Resources */,
 				527B7F1A18CF153A0027F4BE /* Main.storyboard in Resources */,
 				523B742518D607D900F82947 /* book@2x.png in Resources */,
+				52613D9118D9EC9E001EFED5 /* small.png in Resources */,
 				529E0F4918D945D7001CCFE4 /* course@2x.png in Resources */,
+				52613D8518D9DF90001EFED5 /* wallpaper@2x.png in Resources */,
 				529E0F4818D945D7001CCFE4 /* course.png in Resources */,
 				523B742618D607D900F82947 /* chat.png in Resources */,
 			);
