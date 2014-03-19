@@ -21,7 +21,6 @@
 
 @implementation ExamViewController
 
-@synthesize data;
 @synthesize questions;
 @synthesize orientation;
 
@@ -37,7 +36,7 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    self.title = data.name;
+    self.title = @"心理测评";
     //    self.scrollView.contentSize = CGSizeMake(self.scrollView.frame.size.width, self.scrollView.frame.size.height * 3);
     self.questions = [[NSMutableArray alloc]init];
     [self.questions addObject:[[Question alloc] initWithTrueOrFalse:@"1.当我投入到创造性的工作时，经常会忘却一切。" withAnswer:1]];

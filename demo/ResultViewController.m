@@ -10,14 +10,16 @@
 #import "RTLabel.h"
 #define MARGIN 15
 
-@interface ResultViewController ()
+@interface ResultViewController ()<UIActionSheetDelegate>
 @property (weak, nonatomic) IBOutlet UIScrollView *scrollView;
 @property (strong, nonatomic) RTLabel *resultLabel;
+@property (strong, nonatomic) NSArray* socials;
 @property NSInteger orientation;
 @end
 
 @implementation ResultViewController
 @synthesize orientation;
+@synthesize socials;
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -38,6 +40,7 @@
     self.resultLabel.text = sample_text;
     self.resultLabel.contentMode = UIViewContentModeRedraw;
     self.orientation = 0;
+    self.socials = [[NSArray alloc] initWithObjects:@"分享到微信", @"分享到微博", @"分享到Twitter", nil];
 }
 
 -(void)viewDidAppear:(BOOL)animated
@@ -70,6 +73,21 @@
 -(void)didRotateFromInterfaceOrientation:(UIInterfaceOrientation)fromInterfaceOrientation
 {
     [self handleOrientation];
+}
+- (IBAction)share:(id)sender {
+    UIActionSheet* actionSheet = [[UIActionSheet alloc]
+                                  initWithTitle: nil
+                                  delegate:self
+                                  cancelButtonTitle: nil
+                                  destructiveButtonTitle: nil
+                                  otherButtonTitles:nil];
+    for(NSString* s in socials){
+        [actionSheet addButtonWithTitle:s];
+    }
+    [actionSheet addButtonWithTitle: @"取消"];
+    actionSheet.cancelButtonIndex = self.socials.count;
+    actionSheet.actionSheetStyle = UIActionSheetStyleDefault;
+    [actionSheet showFromTabBar:self.tabBarController.tabBar];
 }
 
 @end

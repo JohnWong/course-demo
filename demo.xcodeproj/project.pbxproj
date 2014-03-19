@@ -29,10 +29,11 @@
 		52613D8518D9DF90001EFED5 /* wallpaper@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 52613D8418D9DF90001EFED5 /* wallpaper@2x.png */; };
 		52613D8A18D9E1A4001EFED5 /* blue@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 52613D8618D9E1A4001EFED5 /* blue@2x.png */; };
 		52613D8B18D9E1A4001EFED5 /* green@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 52613D8718D9E1A4001EFED5 /* green@2x.png */; };
-		52613D8C18D9E1A4001EFED5 /* pink@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 52613D8818D9E1A4001EFED5 /* pink@2x.png */; };
+		52613D8C18D9E1A4001EFED5 /* pink@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 52613D8818D9E1A4001EFED5 /* pink@2x.ng */; };
 		52613D8D18D9E1A4001EFED5 /* yellow@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 52613D8918D9E1A4001EFED5 /* yellow@2x.png */; };
 		52613D8F18D9E6DA001EFED5 /* link.png in Resources */ = {isa = PBXBuildFile; fileRef = 52613D8E18D9E6DA001EFED5 /* link.png */; };
 		52613D9118D9EC9E001EFED5 /* small.png in Resources */ = {isa = PBXBuildFile; fileRef = 52613D9018D9EC9E001EFED5 /* small.png */; };
+		52613D9418D9F4BD001EFED5 /* ExamFlipViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 52613D9318D9F4BD001EFED5 /* ExamFlipViewController.m */; };
 		527B7F0718CF153A0027F4BE /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 527B7F0618CF153A0027F4BE /* Foundation.framework */; };
 		527B7F0918CF153A0027F4BE /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 527B7F0818CF153A0027F4BE /* CoreGraphics.framework */; };
 		527B7F0B18CF153A0027F4BE /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 527B7F0A18CF153A0027F4BE /* UIKit.framework */; };
@@ -105,6 +106,8 @@
 		52613D8918D9E1A4001EFED5 /* yellow@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "yellow@2x.png"; sourceTree = "<group>"; };
 		52613D8E18D9E6DA001EFED5 /* link.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = link.png; sourceTree = "<group>"; };
 		52613D9018D9EC9E001EFED5 /* small.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = small.png; sourceTree = "<group>"; };
+		52613D9218D9F4BD001EFED5 /* ExamFlipViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ExamFlipViewController.h; sourceTree = "<group>"; };
+		52613D9318D9F4BD001EFED5 /* ExamFlipViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ExamFlipViewController.m; sourceTree = "<group>"; };
 		527B7F0318CF153A0027F4BE /* demo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = demo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		527B7F0618CF153A0027F4BE /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		527B7F0818CF153A0027F4BE /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -173,29 +176,29 @@
 		523B741818D6078100F82947 /* resources */ = {
 			isa = PBXGroup;
 			children = (
+				52613D8618D9E1A4001EFED5 /* blue@2x.png */,
 				523B741918D607D900F82947 /* book.png */,
 				523B741A18D607D900F82947 /* book@2x.png */,
 				523B741B18D607D900F82947 /* chat.png */,
 				523B741C18D607D900F82947 /* chat@2x.png */,
 				523B741D18D607D900F82947 /* check.png */,
 				523B741E18D607D900F82947 /* check@2x.png */,
-				523B741F18D607D900F82947 /* paper.png */,
 				529E0F4618D945D7001CCFE4 /* course.png */,
+				529E0F4718D945D7001CCFE4 /* course@2x.png */,
 				529E0F5C18D9C873001CCFE4 /* github.png */,
 				529E0F5D18D9C873001CCFE4 /* github@2x.png */,
-				529E0F4718D945D7001CCFE4 /* course@2x.png */,
+				52613D8718D9E1A4001EFED5 /* green@2x.png */,
+				52613D8E18D9E6DA001EFED5 /* link.png */,
+				523B741F18D607D900F82947 /* paper.png */,
 				523B742018D607D900F82947 /* paper@2x.png */,
+				52613D8818D9E1A4001EFED5 /* pink@2x.png */,
+				52613D9018D9EC9E001EFED5 /* small.png */,
 				523B742118D607D900F82947 /* user.png */,
 				523B742218D607D900F82947 /* user@2x.png */,
-				52613D8418D9DF90001EFED5 /* wallpaper@2x.png */,
-				52613D9018D9EC9E001EFED5 /* small.png */,
-				52613D8618D9E1A4001EFED5 /* blue@2x.png */,
-				52613D8718D9E1A4001EFED5 /* green@2x.png */,
-				52613D8818D9E1A4001EFED5 /* pink@2x.png */,
-				52613D8918D9E1A4001EFED5 /* yellow@2x.png */,
-				523B743218D6096B00F82947 /* videoviewdemo.png */,
-				52613D8E18D9E6DA001EFED5 /* link.png */,
 				523B742318D607D900F82947 /* videoviewdemo.mp4 */,
+				523B743218D6096B00F82947 /* videoviewdemo.png */,
+				52613D8418D9DF90001EFED5 /* wallpaper@2x.png */,
+				52613D8918D9E1A4001EFED5 /* yellow@2x.png */,
 			);
 			path = resources;
 			sourceTree = "<group>";
@@ -248,6 +251,8 @@
 				523FFAAA18D5E979009AE923 /* CoursePageViewController.m */,
 				523B742F18D6083A00F82947 /* CourseViewController.h */,
 				523B743018D6083A00F82947 /* CourseViewController.m */,
+				52613D9218D9F4BD001EFED5 /* ExamFlipViewController.h */,
+				52613D9318D9F4BD001EFED5 /* ExamFlipViewController.m */,
 				52D830F518CF719500D233D8 /* ExamListViewController.h */,
 				52D830F618CF719500D233D8 /* ExamListViewController.m */,
 				52411DAC18D5A1BD00904A79 /* ExamPageViewController.h */,
@@ -453,6 +458,7 @@
 				5236F02318D4544300625EEE /* Pair.m in Sources */,
 				523FFAAB18D5E979009AE923 /* CoursePageViewController.m in Sources */,
 				52C344BB18D0C603006FB727 /* Evaluation.m in Sources */,
+				52613D9418D9F4BD001EFED5 /* ExamFlipViewController.m in Sources */,
 				527ECAC818D367EC00801242 /* ResultViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

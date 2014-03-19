@@ -104,7 +104,7 @@
             
         }
         cell.textLabel.text = @"这门课程用财务语言解构企业的价值创造过程，从而帮助学习者理解影响价值创造的各种因素，建立财务思维，并具备将其应用于商业决策的能力。借助财务信息，企业的管理者可以进行有效的战略定位、监控和管理企业的经营业绩、制定更有助于与外部投资者沟通的财务政策，以及对并购目标做出评价；政府管理者可以预测未来产业的兴衰变化；投资人可以判断谁将在未来复杂多变的市场中生存下来并发展壮大；证券分析师和投资银行可以评价公司的价值；商业银行可以评估偿债风险并做出贷款决策；咨询公司可以为客户进行竞争分析。这虽然是一门研究生课程，但是学习者不需要具备会计基础。我们将从认识财务报表开始，逐步了解财务信息的架构体系，讨论财务数据与行业、战略定位与战略执行的关系，剖析企业的价值创造过程，在此基础上，讨论如何运用财务数据进行商业决策。";
-        cell.accessoryType = UITableViewCellAccessoryDetailButton;
+        cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
     }else if(indexPath.section == 2){
         NSString* cellIdentifier = @"Course";
         cell = [tableView dequeueReusableCellWithIdentifier:cellIdentifier];
@@ -151,7 +151,7 @@
     switch (indexPath.section) {
         case 1:
         {
-            //Popover
+            [self performSegueWithIdentifier:@"DetailInfo" sender:self];
         }
             break;
         case 2:

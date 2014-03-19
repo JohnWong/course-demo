@@ -83,17 +83,13 @@
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
-//    [tableView deselectRowAtIndexPath:indexPath animated:YES];//选中后的反显颜色即刻消失
-    [self performSegueWithIdentifier:@"pushEvaluation" sender: [self.list objectAtIndex:indexPath.row]];
-}
-
--(void) prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
-{
-    UIViewController* destination = segue.destinationViewController;
-    if([destination respondsToSelector:@selector(setData:)]){
-        [destination setValue: sender forKey:@"data"];
+    if(indexPath.row % 2 == 1){
+        [self performSegueWithIdentifier:@"pushEvaluation" sender: [self.list objectAtIndex:indexPath.row]];
+    } else {
+        [self performSegueWithIdentifier:@"Exam2" sender: [self.list objectAtIndex:indexPath.row]];
     }
 }
+
 - (IBAction)goRecommendCourse:(id)sender {
     [self performSegueWithIdentifier:@"recommendCourse" sender:self];
 }

@@ -10,6 +10,5 @@
 #import "Evaluation.h"
 
 @interface ExamViewController : UIViewController
-@property(nonatomic, strong) Evaluation* data;
 @property(nonatomic, strong) NSMutableArray* questions;
 @end
