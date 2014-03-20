@@ -29,7 +29,7 @@
 		52613D8518D9DF90001EFED5 /* wallpaper@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 52613D8418D9DF90001EFED5 /* wallpaper@2x.png */; };
 		52613D8A18D9E1A4001EFED5 /* blue@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 52613D8618D9E1A4001EFED5 /* blue@2x.png */; };
 		52613D8B18D9E1A4001EFED5 /* green@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 52613D8718D9E1A4001EFED5 /* green@2x.png */; };
-		52613D8C18D9E1A4001EFED5 /* pink@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 52613D8818D9E1A4001EFED5 /* pink@2x.ng */; };
+		52613D8C18D9E1A4001EFED5 /* pink@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 52613D8818D9E1A4001EFED5 /* pink@2x.png */; };
 		52613D8D18D9E1A4001EFED5 /* yellow@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 52613D8918D9E1A4001EFED5 /* yellow@2x.png */; };
 		52613D8F18D9E6DA001EFED5 /* link.png in Resources */ = {isa = PBXBuildFile; fileRef = 52613D8E18D9E6DA001EFED5 /* link.png */; };
 		52613D9118D9EC9E001EFED5 /* small.png in Resources */ = {isa = PBXBuildFile; fileRef = 52613D9018D9EC9E001EFED5 /* small.png */; };
@@ -370,6 +370,9 @@
 				LastUpgradeCheck = 0500;
 				ORGANIZATIONNAME = john;
 				TargetAttributes = {
+					527B7F0218CF153A0027F4BE = {
+						DevelopmentTeam = CZG7PM9NVL;
+					};
 					527B7F2618CF153A0027F4BE = {
 						TestTargetID = 527B7F0218CF153A0027F4BE;
 					};
@@ -586,10 +589,13 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "demo/demo-Prefix.pch";
 				INFOPLIST_FILE = "demo/demo-Info.plist";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Debug;
@@ -599,10 +605,13 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "demo/demo-Prefix.pch";
 				INFOPLIST_FILE = "demo/demo-Info.plist";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Release;
